@@ -81,6 +81,6 @@ import styles from "./index.module.less";
 直接引入 
 
 ```
-import "./index.less";
+import "./index.less"
 ```
 
