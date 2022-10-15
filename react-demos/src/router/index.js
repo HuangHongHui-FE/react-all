@@ -4,6 +4,8 @@ import Home from '../views/Home'
 import Fast from '../views/Fast'
 import ImgBetter from '../views/Img/ImgBetter'
 
+
+import Memo from '../views/ReactApi/memo'
 const BaseRouter = () => {
   return (
     <Router>
@@ -14,6 +16,9 @@ const BaseRouter = () => {
               <Route exact path="/" component={Home}></Route>
               <Route path="/fast" component={Fast}></Route>
               <Route path="/img/imgbetter" component={ImgBetter}></Route>
+
+              {/* react API */}
+              <Route path="/reactapi/memo" component={Memo}></Route>
             </Switch>
           </App>
         )}></Route>
