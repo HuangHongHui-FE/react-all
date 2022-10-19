@@ -15,6 +15,7 @@ const BaseRouter = () => {
             <Switch>
               <Route exact path="/" component={Home}></Route>
               <Route path="/fast" component={Fast}></Route>
+              {/* img about */}
               <Route path="/img/imgbetter" component={ImgBetter}></Route>
 
               {/* react API */}
