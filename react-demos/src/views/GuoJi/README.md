@@ -1,5 +1,7 @@
 ### react-i18next
 
+文档：https://react.i18next.com/
+
 ```js
 # npm
 npm install react-i18next i18next --save
