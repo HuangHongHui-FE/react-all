@@ -20,9 +20,29 @@ class Home extends Component {
           {/* 高亮配置 */}
           <NavLink activeClassName='active_api_mome' to="/reactapi/memo">memo</NavLink>
         </div>
+
+        <h2>国际化</h2>
+        <div>
+          <p onClick={() => this.goi18next() }>react-i18next</p>
+          <p>react-intl 有demo可看</p>
+        </div>
       </>
     )
   }
+  goi18next(params) {
+    // push跳转+携带params参数
+        this.props.history.push('/guoji/i18next')
+ 
+        // push跳转+携带search参数
+        // this.props.history.push(`/home/messages/detail?id=${id}&title=${title}`)
+ 
+        // push跳转+携带state参数
+        // this.props.history.push(`/home/messages/detail`,{id,title})
+  }
+  
+
+
+  
   componentDidMount() {
 
   }
