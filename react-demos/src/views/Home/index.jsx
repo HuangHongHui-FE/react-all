@@ -26,12 +26,17 @@ class Home extends Component {
           <p onClick={() => this.goi18next() }>react-i18next</p>
           <p>react-intl 有demo可看</p>
         </div>
+
+        <h2>hooks</h2>
+        <div>
+          <p onClick={() => this.goHooks()}>go hooks</p>
+        </div>
       </>
     )
   }
   goi18next(params) {
     // push跳转+携带params参数
-        this.props.history.push('/guoji/i18next')
+        this.props.history.push('/guoji/i18next');
  
         // push跳转+携带search参数
         // this.props.history.push(`/home/messages/detail?id=${id}&title=${title}`)
@@ -39,8 +44,10 @@ class Home extends Component {
         // push跳转+携带state参数
         // this.props.history.push(`/home/messages/detail`,{id,title})
   }
-  
 
+  goHooks(){
+    this.props.history.push('/hooks');
+  }
 
   
   componentDidMount() {
