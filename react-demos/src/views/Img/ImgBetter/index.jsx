@@ -16,11 +16,7 @@ import ten from '../../../static/image/Img/10.png'
 
 // 图片懒加载011
 function ImgBetter() {
-
-    // const [list, setList] = useState(['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '01', '02', '03', '04', '05', '06', '07', '08', '09', '01', '02', '03', '04', '05', '06', '07', '08', '09']);
     const [list, setList] = useState([one, two, three, four, five, six, seven, eight, nine, ten]);
-    const prefix = ''
-
     const ref = useRef(null)
 
     useEffect(() => {
@@ -37,25 +33,19 @@ function ImgBetter() {
         }
     }, [])
 
-
+    // 图片懒加载
     function scrollViewEvent(images) {
-
         // 可视化区域高度
         const clientHeight = ref.current?.clientHeight || 0
-
         // 滚动的距离
         const scrollTop = ref.current?.scrollTop || 0
-
         // 遍历imgs元素
         for (let image of images) {
             if (!image.dataset.src) continue
-
             // 判断src是否已经加载
             if (image.src) continue
-
             //图片距离顶部距离
             let top = image.offsetTop
-
             // 公式
             if (clientHeight + scrollTop > top) {
                 // 设置图片源地址，完成目标图片加载
