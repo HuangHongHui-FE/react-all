@@ -70,7 +70,12 @@ import './index.css';
 
 // import App from './04-router/App'
 
-import App from './05-styled-components/App'
+// import App from './05-styled-components/App'
+
+// import App from './10-redux/App'
+
+
+import App from './14-react补充/portal/App'
 
 
 
