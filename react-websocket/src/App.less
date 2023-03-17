@@ -1,10 +1,30 @@
 .App {
-
+  position: relative;
+  height: 100vh;
 }
 
-.header{
-  color: bisque;
-  .header_index{
-    color: aqua;
-  }
+.header {
+  display: block;
+  position: fixed;
+  height: 6vh;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+
+.content {
+  display: block;
+  width: 100%;
+  padding: 6vh 0;
+}
+
+
+.footer {
+  display: block;
+  height: 6vh;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 999;
 }
