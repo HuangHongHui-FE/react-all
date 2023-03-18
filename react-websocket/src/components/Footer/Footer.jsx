@@ -1,20 +1,24 @@
-import './Footer.less'
-function Footer() {
+import './Footer.less';
+import { NavLink } from 'react-router-dom';
+
+function Footer(props) {
+    let { tabsArr } = props
+
     return (
-        <div className="footer_con">
-            <div className="footer_one active">
-                <div>--</div>
-                <div>微信</div>
+        <footer className='footer'>
+            <div className="footer_con">
+                {
+                    tabsArr.map((item, index) => {
+                        return (
+                            <NavLink to={item.path} key={index}>
+                                <div>{item.icon}</div>
+                                <div>{item.name}</div>
+                            </NavLink>
+                        )
+                    })
+                }
             </div>
-            <div className="footer_two">
-                <div>+++</div>
-                <div>通讯录</div>
-            </div>
-            <div className="footer_three">
-                <div>=</div>
-                <div>我</div>
-            </div>
-        </div>
+        </footer>
     )
 }
 

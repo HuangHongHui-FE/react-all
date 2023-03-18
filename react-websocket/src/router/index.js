@@ -1,19 +1,22 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Index from '../views/Index/Index';
 
 import Friends from '../views/Friends/Friends';
 
 import My from '../views/My/My';
+import Chat from '../views/Chat/Chat';
 
 function BaseRouter() {
     return (
         <Routes>
-            <Route exact path="/" element={<Index />}></Route>
+            {/* 注意这里嵌套路由的配置 */}
+            <Route path="/" element={<Index />}>
+                <Route path="/friends" element={<Friends />}></Route>
+                <Route path="/my" element={<My />}></Route>
+            </Route>
 
-            <Route path="/friends" element={<Friends />}></Route>
-
-            <Route path="/my" element={<My />}></Route>
+            <Route path="/chat" element={<Chat />}></Route>
         </Routes>
     )
 }
