@@ -12,7 +12,7 @@ import socketIO from 'socket.io-client';
 
 function Chat() {
     // 要发送的内容
-    let value = '';
+    let [value, setValue] = useState('');
     let [socket, setSocket] = useState();
     let [msgArr, setMsgArr] = useState([]);
 
@@ -23,9 +23,6 @@ function Chat() {
 
     // socket用·
     let eventName = `${user}to${toUser}`;
-    let eventNameEnter = eventName.split('to')[1] + "to" + eventName.split('to')[0];
-
-
 
     async function getMsgFn(query) {
         let data = await getMsg(query);
@@ -45,7 +42,7 @@ function Chat() {
 
 
     function iptChange(e) {
-        value = e.target.value;
+        setValue(e.target.value);
     }
 
     function send() {
@@ -102,7 +99,7 @@ function Chat() {
 
             <div className='chat_bottom'>
                 <div>---</div>
-                <input type="text" onChange={(e) => iptChange(e)} />
+                <input type="text" onChange={(e) => iptChange(e)} value={value}/>
                 <div onClick={() => send()}>发送</div>
             </div>
         </>
