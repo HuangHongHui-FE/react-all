@@ -5,19 +5,27 @@ import { useLocation } from 'react-router-dom'
 import { getMsg } from '../../http/api'
 
 import { timeFormat } from '../../utils/timeFormat'
+
+import socketIO from 'socket.io-client';
+
+
+
 function Chat() {
     // 要发送的内容
     let value = '';
-    let [msgArr, setMsgArr] = useState([])
+    let [socket, setSocket] = useState();
+    let [msgArr, setMsgArr] = useState([]);
 
     // 传参过来对应的用户
     let query = useLocation();
     let toUser = query.state.name.slice(-1);
     let user = sessionStorage.getItem('user');
 
-    function send() {
+    // socket用·
+    let eventName = `${user}to${toUser}`;
+    let eventNameEnter = eventName.split('to')[1] + "to" + eventName.split('to')[0];
 
-    }
+
 
     async function getMsgFn(query) {
         let data = await getMsg(query);
@@ -26,18 +34,51 @@ function Chat() {
 
 
     useEffect(() => {
+        console.log("useeffect")
         getMsgFn({ user, toUser });
+
+        // 进入页面链接一次
+        socketStart();
     }, [])
 
 
 
 
     function iptChange(e) {
-        value = e.target.value
+        value = e.target.value;
     }
+
+    function send() {
+        let msg = {
+            "to": ['user_' + toUser],
+            "from": 'user_' + user,
+            "content": value,
+            "time": new Date().getTime()
+        }
+        console.log(eventName)
+        socket.emit(eventName, msg);
+
+        // 解决更新数组无法更新
+        setMsgArr([...msgArr, msg]);
+    }
+
+
+    function socketStart() {
+        socket = socketIO.connect('http://localhost:8000');
+        // socket
+        socket.on(eventName, (data) => {
+
+            setMsgArr(data);
+
+        });
+        setSocket(socket);
+    }
+
+
+
     return (
         <>
-            <Header title="user1"></Header>
+            <Header title={toUser}></Header>
 
             <div className='chat'>
                 {

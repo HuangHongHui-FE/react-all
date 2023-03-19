@@ -27,3 +27,13 @@ export function getMsg(query){
 
     })
 }
+
+// export function getSocket(){
+//     let url = "/chatMsg?" + params(query);
+//     console.log(url);
+//     return request({
+//         url: url,
+//         method: "GET",
+
+//     })
+// }
