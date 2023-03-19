@@ -35,6 +35,9 @@ function Chat() {
         getMsgFn({ user, toUser });
 
         // 进入页面链接一次
+        if(socket){
+            socket.disconnect();
+        }
         socketStart();
     }, [])
 
@@ -64,7 +67,6 @@ function Chat() {
         socket = socketIO.connect('http://localhost:8000');
         // socket
         socket.on(eventName, (data) => {
-
             setMsgArr(data);
 
         });

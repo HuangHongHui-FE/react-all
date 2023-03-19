@@ -6,6 +6,7 @@ import Friends from '../views/Friends/Friends';
 
 import My from '../views/My/My';
 import Chat from '../views/Chat/Chat';
+import ChatTogether from '../views/ChatTogether/ChatTogether';
 
 function BaseRouter() {
     return (
@@ -17,6 +18,7 @@ function BaseRouter() {
             </Route>
 
             <Route path="/chat" element={<Chat />}></Route>
+            <Route path="/chattogether" element={<ChatTogether />}></Route>
         </Routes>
     )
 }
