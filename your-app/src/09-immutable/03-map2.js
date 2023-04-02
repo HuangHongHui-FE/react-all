@@ -1,16 +1,15 @@
 
 import React, { Component } from 'react'
-import {Map} from 'immutable'
+import { Map } from 'immutable'
 export default class App extends Component {
-
     state = {
-        info:Map({
-            name:"kerwin",
-            select:"aa",
-            filter:Map({
-                text:"",
-                up:true,
-                down:false
+        info: Map({
+            name: "kerwin",
+            select: "aa",
+            filter: Map({
+                text: "",
+                up: true,
+                down: false
             })
         })
     }
@@ -18,40 +17,40 @@ export default class App extends Component {
     componentDidMount() {
         console.log(this.state.info.get("filter"))
     }
-    
+
     render() {
         return (
             <div>
-                <button onClick={()=>{
+                <button onClick={() => {
                     this.setState({
-                        info:this.state.info.set("name","xiaoming").set("select","dwadwa")
+                        info: this.state.info.set("name", "xiaoming").set("select", "dwadwa")
                     })
                 }}>click</button>
                 {this.state.info.get("name")}
-                <Child filter={this.state.info.get("filter")}/>
+                <Child filter={this.state.info.get("filter")} />
             </div>
         )
     }
 }
 
 
-class Child extends Component{
+class Child extends Component {
     shouldComponentUpdate(nextProps, nextState) {
-        if(this.props.filter === nextProps.filter){
+        console.log(nextProps, nextState);
+        if (this.props.filter === nextProps.filter) {
             return false
         }
-
         return true
     }
-    
 
-    render(){
+
+    render() {
         return <div>
             child
         </div>
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         console.log("componentDidUpdate")
     }
 }

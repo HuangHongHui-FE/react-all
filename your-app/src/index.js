@@ -71,7 +71,8 @@ import './index.css';
 // import App from './04-router/App'
 
 // import App from './05-styled-components/App'
-import App from './09-immutable/02-map'
+// import App from './09-immutable/02-map'
+import App from './09-immutable/03-map2'
 
 // import App from './10-redux/App'
 
