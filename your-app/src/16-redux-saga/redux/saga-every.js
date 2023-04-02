@@ -1,7 +1,3 @@
-/*
- * @作者: kerwin
- * @公众号: 大前端私房菜
- */
 import {takeEvery} from 'redux-saga/effects'
 import { getList1 } from './saga/saga1'
 import { getList2 } from './saga/saga2'

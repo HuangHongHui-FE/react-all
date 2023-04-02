@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
-// import App from './01-base/01-class组件-App';
+import App from './01-base/01-class组件-App';
 // import App from './01-base/02-函数式组件-App';
 // import App from './01-base/03-组件的嵌套-App';
 // import App from './01-base/04-组件的样式-App';
@@ -75,7 +75,10 @@ import './index.css';
 // import App from './10-redux/App'
 
 
-import App from './14-react补充/portal/App'
+// import App from './14-react补充/portal/App'
+
+// import App from './16-redux-saga/App.js'
+
 
 
 

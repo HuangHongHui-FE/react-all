@@ -1,7 +1,3 @@
-/*
- * @作者: kerwin
- * @公众号: 大前端私房菜
- */
 function *test(){
     console.log("111111")
     var input1 = yield "111-输出";
