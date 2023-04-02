@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import getCinemaListAction from '../redux/actionCreator/getCinemaListAction'
+
+import {hide, show} from '../redux/actionCreator/TabbarActionCreator';
+
 import store from '../redux/store'
 export default function Cinemas(props) {
-
     const [cityName] = useState(store.getState().CityReducer.cityName)
-
     const [cinemaList, setCinemaList] = useState(store.getState().CinemaListReducer.list)
-
 
     useEffect(() => {
         if (store.getState().CinemaListReducer.list.length === 0) {
-            //去后台取数据
             // actionCreator 里写异步
-            store.dispatch(getCinemaListAction())
+            store.dispatch(getCinemaListAction());
         } else {
             console.log("store 缓存")
         }
@@ -25,6 +24,14 @@ export default function Cinemas(props) {
 
     return (
         <div>
+            <button onClick={() => {
+                store.dispatch(hide())
+            }}>隐藏tabber栏</button>
+
+            <button onClick={() => {
+                store.dispatch(show())
+            }}>显示tabber栏</button>
+
             <div onClick={() => {
                 props.history.push(`/city`)
             }}>{cityName}</div>
