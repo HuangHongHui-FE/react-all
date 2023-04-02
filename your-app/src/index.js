@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// 11-react-redux
+import { Provider } from 'react-redux';
+import store from './11-react-redux/redux/store';
 
 // import App from './01-base/01-class组件-App';
 // import App from './01-base/02-函数式组件-App';
@@ -74,7 +77,8 @@ import './index.css';
 // import App from './09-immutable/02-map'
 // import App from './09-immutable/03-map2'
 
-import App from './10-redux/App'
+// import App from './10-redux/App'
+import App from './11-react-redux/App'
 
 
 // import App from './14-react补充/portal/App'
@@ -91,7 +95,9 @@ import App from './10-redux/App'
 
 ReactDOM.render(
     // <React.StrictMode>
-    <App />
+    <Provider store={store}>
+        <App />
+    </Provider>
     // </React.StrictMode>
     , document.getElementById("root"))
 
