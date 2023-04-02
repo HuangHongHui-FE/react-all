@@ -1,22 +1,21 @@
 import { getCinemaListService } from "../services/maizuo"
 export default {
-
     namespace: 'maizuo',
-  
+
     state: {
-        isShow:true,
-        list:[]
+        isShow: true,
+        list: []
     },
 
-    reducers:{
-        hide(prevState,action){
-            return {...prevState,isShow:false}
+    reducers: {
+        hide(prevState, action) {
+            return { ...prevState, isShow: false }
         },
-        show(prevState,action){
-            return {...prevState,isShow:true}
+        show(prevState, action) {
+            return { ...prevState, isShow: true }
         },
-        changeCinemaList(prevState,{payload}){
-            return {...prevState,list:payload}
+        changeCinemaList(prevState, { payload }) {
+            return { ...prevState, list: payload }
         }
     },
 
@@ -27,14 +26,14 @@ export default {
     },
 
     //异步- redux-saga
-    effects:{
-        *getCinemaList(action,{call,put}){
+    effects: {
+        *getCinemaList(action, { call, put }) {
             // console.log(obj)
             var res = yield call(getCinemaListService)
             console.log(res.data.data.cinemas)
             yield put({
-                type:"changeCinemaList",
-                payload:res.data.data.cinemas
+                type: "changeCinemaList",
+                payload: res.data.data.cinemas
             })
         }
     }

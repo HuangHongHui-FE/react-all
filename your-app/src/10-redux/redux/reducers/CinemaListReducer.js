@@ -4,7 +4,6 @@ const CinemaListReducer = (prevState = {
 
    let newState = { ...prevState }
    switch (action.type) {
-
       case "change-list":
          newState.list = action.payload
          return newState

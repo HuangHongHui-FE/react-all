@@ -1,36 +1,34 @@
-/*
- * @作者: kerwin
- * @公众号: 大前端私房菜
- */
+import { applyMiddleware, combineReducers, createStore, compose } from 'redux'
 
- //1. 引入redux, 
- //2. createStore( reducer )
- import {applyMiddleware, combineReducers, createStore,compose} from 'redux'
- import CityReducer from './reducers/CityReducer'
- import TabbarReducer from './reducers/TabbarReducer'
- import CinemaListReducer from './reducers/CinemaListReducer'
- import reduxThunk from 'redux-thunk'
- import reduxPromise from 'redux-promise'
- import createSagaMidller from 'redux-saga'
+import CityReducer from './reducers/CityReducer'
+import TabbarReducer from './reducers/TabbarReducer'
+import CinemaListReducer from './reducers/CinemaListReducer'
+
+import reduxThunk from 'redux-thunk'
+import reduxPromise from 'redux-promise'
+
+import createSagaMidller from 'redux-saga'
+
 import watchSaga from './saga'
- const reducer  = combineReducers({
+
+const reducer = combineReducers({
   CityReducer,
   TabbarReducer,
   CinemaListReducer
- })
+})
 
- const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
- const sagaMidlleware = createSagaMidller()
- const store = createStore(reducer,composeEnhancers(applyMiddleware(reduxThunk,reduxPromise,sagaMidlleware)));
+const sagaMidlleware = createSagaMidller()
+const store = createStore(reducer, composeEnhancers(applyMiddleware(reduxThunk, reduxPromise, sagaMidlleware)));
 
 
- sagaMidlleware.run(watchSaga)
- /*
-  store.dispatch
-  store.subscrbe
-  store.getState
- */
+sagaMidlleware.run(watchSaga)
+/*
+ store.dispatch
+ store.subscrbe
+ store.getState
+*/
 
 //  function createKerwinStore(reducer){
 //    var list = []
@@ -57,23 +55,23 @@ import watchSaga from './saga'
 //  }
 
 
- export default store
+export default store
 
 
- /*
-   var obj = {
-     myname:"kerwin"
+/*
+  var obj = {
+    myname:"kerwin"
+  }
+  function test(obj2){
+    var newobj = {...obj2}
+    newobj.myname="xiaoming"
+  
+    return newobj
    }
-   function test(obj2){
-     var newobj = {...obj2}
-     newobj.myname="xiaoming"
-   
-     return newobj
-    }
-    test(obj)
+   test(obj)
 
 
-    纯函数： 
-      1. 对外界没有副作用
-      2. 同样的输入得到同样的输出
- */
+   纯函数： 
+     1. 对外界没有副作用
+     2. 同样的输入得到同样的输出
+*/

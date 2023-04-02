@@ -1,13 +1,13 @@
- function hide(){
-     return {
-        type:"kerwinhide-tabbar"
-    }
- }
-
- function show(){
+function hide() {
     return {
-        type:"kerwinshow-tabbar"
+        type: "kerwinhide-tabbar"
     }
- }
+}
 
- export {show,hide}
+function show() {
+    return {
+        type: "kerwinshow-tabbar"
+    }
+}
+
+export { show, hide }
