@@ -4,7 +4,7 @@ import './index.css';
 // 1. Initialize
 const app = dva({
     // history:require("history").createBrowserHistory()
-    history: require("history").createHashHistory()
+    history:require("history").createHashHistory()
 });
 
 // 2. Plugins

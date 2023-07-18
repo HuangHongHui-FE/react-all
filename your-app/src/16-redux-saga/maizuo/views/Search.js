@@ -2,14 +2,14 @@
  * @作者: kerwin
  * @公众号: 大前端私房菜
  */
-import React,{useState,useEffect} from 'react'
-import getCinemaListAction from '../redux/actionCreator/getCinemaListAction'
+import React,{useState,useEffect,useMemo} from 'react'
 import store from '../redux/store'
-export default function Cinemas(props) {
+import getCinemaListAction from '../redux/actionCreator/getCinemaListAction'
 
-    const [cityName] = useState(store.getState().CityReducer.cityName)
-
+export default function Search() {
     const [cinemaList,setCinemaList] = useState(store.getState().CinemaListReducer.list)
+    const [mytext, setmytext] = useState("")
+
 
 
     useEffect(() => {
@@ -18,11 +18,7 @@ export default function Cinemas(props) {
         if(store.getState().CinemaListReducer.list.length===0){
             //去后台取数据
             // actionCreator 里写异步
-            // store.dispatch(getCinemaListAction())
-
-            store.dispatch({
-                type:"get-cinemalist"
-            })
+            store.dispatch(getCinemaListAction())
         }else{
             console.log("store 缓存")
         }
@@ -37,18 +33,16 @@ export default function Cinemas(props) {
         }
     }, [])
 
+    const getCinemaList = useMemo(() => cinemaList.filter(item=>item.name.toUpperCase().includes(mytext.toUpperCase()) || 
+    item.address.toUpperCase().includes(mytext.toUpperCase())
+    ), [cinemaList,mytext])
     return (
         <div>
-            <div style={{overflow:"hidden"}}>
-                <div onClick={()=>{
-                    props.history.push(`/city`)
-                }} style={{float:"left"}}>{cityName}</div>
-                <div style={{float:"right"}} onClick={()=>{
-                    props.history.push(`/cinemas/search`)
-                }}>搜索</div>
-            </div>
-            {
-                  cinemaList.map(item=>
+             <input value={mytext} onChange={(evt)=>{
+                    setmytext(evt.target.value)
+                }}/>
+           {
+                  getCinemaList.map(item=>
                     <dl key={item.cinemaId} style={{padding:"10px"}}>
                         <dt>{item.name}</dt>
                         <dd style={{fontSize:"12px",color:"gray"}}>{item.address}</dd>

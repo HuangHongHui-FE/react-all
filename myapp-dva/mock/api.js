@@ -1,18 +1,18 @@
-export default {
-    'GET /users': { name: "kerwin", age: 100, location: "dalian" },
+export default{
+    'GET /users' : {name:"kerwin",age:100,location:"dalian"},
 
-    'POST /users/login': (req, res) => {
+    'POST /users/login' :(req,res)=>{
         console.log(req.body)
 
-        if (req.body.username === "kerwin" && req.body.password === "123") {
+        if(req.body.username==="kerwin" && req.body.password==="123") {
             res.send({
-                ok: 1
+                ok:1
             })
-        } else {
+        }else{
             res.send({
-                ok: 0
+                ok:0
             })
         }
-
+        
     }
 }

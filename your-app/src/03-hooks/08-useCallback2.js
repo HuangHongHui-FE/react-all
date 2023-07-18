@@ -1,53 +1,53 @@
-import React, { useState, useCallback } from 'react'
+import React,{useState,useCallback} from 'react'
 
 export default function App() {
     const [myname, setname] = useState("kerwin")
     const [text, settext] = useState("")
-    const [list, setList] = useState(["aa", "bb", "cc"])
+    const [list,setList] = useState(["aa","bb","cc"])
 
     const handleChange = useCallback(
-        (evt) => {
+        (evt)=>{
             settext(evt.target.value)
         },
         []
     )
 
     const handleAdd = useCallback(
-        () => {
-            setList([...list, text])
+        ()=>{
+            setList([...list,text])
             settext("")
         },
-        [text, list]
+        [text,list]
     )
 
     const handleDel = useCallback(
-        (index) => {
+        (index)=>{
             var newlist = [...list]
-            newlist.splice(index, 1)
+            newlist.splice(index,1)
             setList(newlist)
         },
         [list]
     )
     return (
         <div>
-            {myname} - <button onClick={() => {
+            {myname} - <button onClick={()=>{
                 setname("xiaomng")
             }}>change-myname</button>
 
-            <input onChange={handleChange} value={text} />
+            <input onChange={handleChange}  value={text}/>
             <button onClick={handleAdd}>add</button>
             <ul>
-                {
-                    list.map((item, index) =>
-                        <li key={item}>
-                            {item}
-                            <button onClick={() => handleDel(index)}>del</button>
-                        </li>
-                    )
-                }
+            {
+                list.map((item,index)=>
+                <li key={item}>
+                    {item}
+                    <button onClick={()=>handleDel(index)}>del</button>
+                </li>
+                )
+            }
             </ul>
 
-            {!list.length && <div>暂无待办事项</div>}
+            {!list.length  && <div>暂无待办事项</div>}
         </div>
     )
 }

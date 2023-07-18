@@ -4,11 +4,8 @@ import { applyMiddleware, combineReducers, createStore } from 'redux'
 import CityReducer from './reducers/CityReducer'
 import TabbarReducer from './reducers/TabbarReducer'
 import CinemaListReducer from './reducers/CinemaListReducer'
-
-// 俩异步的中间件
 import reduxThunk from 'redux-thunk'
-import reduxPromise from 'redux-promise'
-
+ import reduxPromise from 'redux-promise'
 const reducer = combineReducers({
   CityReducer,
   TabbarReducer,

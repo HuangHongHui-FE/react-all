@@ -1,3 +1,7 @@
+/*
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+ */
 function getData1(){
     return new Promise((resolve,reject)=>{
         setTimeout(()=>{

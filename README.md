@@ -10,9 +10,3 @@
 ##### react-i18n-demo: react国际化
 
 ##### myapp-dav: dav，数据流方案
-
-需求A开发完成
-A:asguflaisuf
-A:vbdsailfhilsf
-
-B: BBBBBB需求

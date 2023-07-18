@@ -1,7 +1,10 @@
+/*
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+ */
 import React, { Component } from 'react'
 import store from './redux/store'
 // import './02-可执行生成器'
-
 export default class App extends Component {
     render() {
         return (
@@ -15,6 +18,7 @@ export default class App extends Component {
                     } else {
                         console.log("缓存", store.getState().list1)
                     }
+
                 }}>click-ajax-异步缓存111</button>
 
                 <button onClick={() => {
@@ -26,6 +30,7 @@ export default class App extends Component {
                     } else {
                         console.log("缓存", store.getState().list2)
                     }
+
                 }}>click-ajax-异步缓存222</button>
             </div>
         )

@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react'
 import getCinemaListAction from '../redux/actionCreator/getCinemaListAction'
 import store from '../redux/store'
 export default function Cinemas(props) {
+
     const [cityName] = useState(store.getState().CityReducer.cityName)
 
     const [cinemaList, setCinemaList] = useState(store.getState().CinemaListReducer.list)
+
 
     useEffect(() => {
         if (store.getState().CinemaListReducer.list.length === 0) {
@@ -26,7 +28,6 @@ export default function Cinemas(props) {
             <div onClick={() => {
                 props.history.push(`/city`)
             }}>{cityName}</div>
-            
             {
                 cinemaList.map(item =>
                     <dl key={item.cinemaId} style={{ padding: "10px" }}>
