@@ -27,6 +27,10 @@ import UseGetPostSelf from '../views/Hooks/useGetPostSelf'
 
 // 路由hooks
 import UseParamsLocation from '../views/Hooks/useParams-useLocation'
+
+// 平常浏览器学习到的，保持手感用的
+import OtherComponent from '../views/Others/Index' 
+
 const BaseRouter = () => {
 
   const hooksArr = [
@@ -68,6 +72,8 @@ const BaseRouter = () => {
                   return <Route path={item.path} component={item.component} key={index}></Route>
                 })
               }
+              {/* other */}
+              <Route path="/otherStu/index" component={OtherComponent}></Route>
             </Switch>
           </App>
         )}></Route>

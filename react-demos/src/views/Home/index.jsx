@@ -31,6 +31,10 @@ class Home extends Component {
         <div>
           <p onClick={() => this.goHooks()}>go hooks</p>
         </div>
+        <h2>OtherStudy</h2>
+        <div>
+          <p onClick={() => this.goOtherStudy()}>go hooks</p>
+        </div>
       </>
     )
   }
@@ -47,6 +51,10 @@ class Home extends Component {
 
   goHooks(){
     this.props.history.push('/hooks');
+  }
+
+  goOtherStudy(){
+    this.props.history.push('/otherStu/index')
   }
 
   
