@@ -1,7 +1,3 @@
-/*
- * @作者: kerwin
- * @公众号: 大前端私房菜
- */
 const TabbarReducer = (prevState={
     show:true
  },action)=>{
@@ -17,4 +13,4 @@ const TabbarReducer = (prevState={
           return prevState
     }
  }
- export default TabbarReducer
+ export default TabbarReducer;

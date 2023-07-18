@@ -6,7 +6,6 @@ export default function City(props) {
     return (
         <div>
             city
-
             <ul>
                 {
                     list.map(item =>

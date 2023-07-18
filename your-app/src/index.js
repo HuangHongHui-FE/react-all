@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// 11-react-redux
+// import { Provider } from 'react-redux';
+// import store from './11-react-redux/redux/store';
 
 // import App from './01-base/01-class组件-App';
 // import App from './01-base/02-函数式组件-App';
@@ -58,7 +61,7 @@ import './index.css';
 // import App from './03-hooks/02-todolist'
 // import App from './03-hooks/04-useEffect2'
 // import App from './03-hooks/05-useEffect2-案例'
-// import App from './03-hooks/06-useEffect3'
+import App from './03-hooks/06-useEffect3'
 // import App from './03-hooks/07-useCallback1'
 // import App from './03-hooks/08-useCallback2'
 // import App from './03-hooks/09-useMemo'
@@ -71,11 +74,18 @@ import './index.css';
 // import App from './04-router/App'
 
 // import App from './05-styled-components/App'
+// import App from './09-immutable/02-map'
+// import App from './09-immutable/03-map2'
 
 // import App from './10-redux/App'
+// import App from './11-react-redux/App'
 
 
-import App from './14-react补充/portal/App'
+// import App from './14-react补充/portal/App'
+
+// import App from './16-redux-saga/App.js'
+// import App from './16-redux-saga/maizuo/App'
+
 
 
 
@@ -86,7 +96,9 @@ import App from './14-react补充/portal/App'
 
 ReactDOM.render(
     // <React.StrictMode>
-    <App />
+    // <Provider store={store}>
+        <App />
+    // </Provider>
     // </React.StrictMode>
     , document.getElementById("root"))
 
