@@ -8,7 +8,8 @@
 // import UseStateTest from "./views/08-UseStateTest";
 // import UseStateTest from "./views/09-SetStateTest1";
 // import PageTokenTest from "./views/10-PageTokenTest";
-import AuseEventTest from './views/11-AuseEventTest';
+// import AuseEventTest from './views/11-AuseEventTest';
+import DangerouslySetInnerHTML from './views/12-DangerouslySetInnerHTML';
 
 import './App.css';
 
@@ -34,7 +35,9 @@ function App() {
       {/* <PageTokenTest></PageTokenTest> */}
 
       {/* useEvent */}
-      <AuseEventTest />
+      {/* <AuseEventTest /> */}
+
+      <DangerouslySetInnerHTML />
     </div>
   );
 }
