@@ -1,6 +1,6 @@
 // import Header from './views/01-Header.jsx'
 // import MapTest from './views/02-MapTest.jsx'
-// import LodashTest from './views/03-LodashTest.jsx'
+import LodashTest from './views/03-LodashTest.jsx'
 // import AUseCallbackTest from './views/04-AUseCallbackTest'
 // import AUseReducerText from './views/06-AUseReducerTest';
 // import AUseReducerText2 from "./views/06-AUseReducerTest2";
@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       {/* <Header /> */}
       {/* <MapTest></MapTest> */}
-      {/* <LodashTest></LodashTest> */}
+      <LodashTest></LodashTest>
       {/* <AUseCallbackTest></AUseCallbackTest> */}
       {/* <AUseReducerText></AUseReducerText> */}
       {/* <AUseReducerText2></AUseReducerText2> */}
@@ -37,7 +37,7 @@ function App() {
       {/* useEvent */}
       {/* <AuseEventTest /> */}
 
-      <DangerouslySetInnerHTML />
+      {/* <DangerouslySetInnerHTML /> */}
     </div>
   );
 }
