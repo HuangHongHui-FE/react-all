@@ -1,0 +1,9 @@
+{
+    "files": ["001-基础知识-hello.ts", "002-日常类型-hello.ts"],
+    "compilerOptions": {
+        "outFile": "all.js",
+        "strictNullChecks": true,
+        // 关闭多余属性检查
+        "suppressExcessPropertyErrors": true
+    }
+}
